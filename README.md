@@ -21,3 +21,6 @@ When the user clicks yes to the confirm message, the post will be deleted.
 When the user clicks no to the confirm message, the post will not be deleted and the user will see the reviews page.
 When the user signs out, the user can not write, edit or delete a review.
 When the user clicks change password, the user can change her password
+
+
+Able to get all the meals from a certain restaurant by changing the Meal routes and controller. 
