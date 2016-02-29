@@ -7,7 +7,7 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body >
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -17,21 +17,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Home</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Restaurants <span class="caret"></span></a>
+    <!-- Select restaurant with dropdown button -->
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Restaurant <span class="caret"></span>
+                </button>
           <ul class="dropdown-menu">
             <li><a id="rest1">Boloco</a></li>
             <li role="separator" class="divider"></li>
             <li><a id="rest2">Au Bon Pain</a></li>
           </ul>
-        </li>
-      </ul>
+
+        </div>
       <ul class="nav navbar-nav navbar-right">
 
 <!-- Sign up button -->
@@ -43,33 +44,34 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Hello! Please enter your email address and create a new password</h4>
+          <h4 class="modal-title" id="myModalLabel">Hello! Please enter your email and create a password</h4>
         </div>
         <div class="modal-body">
 
-          <form>
+          <form id="sign-up" name="sign-up">
             <fieldset class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+              <label for="credentials[email]">Email</label>
+             <input class="form-control" name="credentials[email]" placeholder="Email" type="text">
             </fieldset>
             <fieldset class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="credentials[password]">Password</label>
+             <input class="form-control" name="credentials[password]" placeholder="Password" type="password">
             </fieldset>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
           </form>
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Sign up</button>
-        </div>
+
       </div>
     </div>
   </div>
 </li>
 
 
-<!-- Log in Button -->
+<!-- Log in in Button -->
 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#login"> Log in</button>
 
 <!-- Log in  Modal -->
@@ -82,26 +84,27 @@
   </div>
   <div class="modal-body">
 
-    <form>
+    <form id="sign-in" name="sign-in">
       <fieldset class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+        <label for="credentials[email]">Email</label>
+        <input name="credentials[email]" type="text" class="form-control" placeholder="Email">
       </fieldset>
       <fieldset class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="credentials[password]">Password</label>
+        <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
       </fieldset>
       <fieldset class="form-group">
-        <label for="exampleInputPassword1">Confrim Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="credentials[password]">Confirm Password</label>
+        <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
       </fieldset>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </div>
     </form>
 
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Log in</button>
-  </div>
+
 </div>
 </div>
 </div>
@@ -120,42 +123,47 @@
   </div>
   <div class="modal-body">
 
-    <form>
+    <form id="change-password" name="change-password">
       <fieldset class="form-group">
-        <label for="exampleInputPassword1">Old Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="passwords[old]">Old Password</label>
+        <input name="passwords[old]" type="password" class="form-control" placeholder="Old Password">
       </fieldset>
       <fieldset class="form-group">
-        <label for="exampleInputPassword1">New Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="passwords[new]">New Password</label>
+        <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
       </fieldset>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Change Password</button>
+      </div>
     </form>
 
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Change Password</button>
-  </div>
+
 </div>
 </div>
 </div>
 </li>
 
-<!-- Sign up button -->
+<!-- Sign out button -->
       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signout"> Sign Out</button>
 
-  <!-- Sign up  Modal -->
+  <!-- Sign out  Modal -->
         <div class="modal fade" id="signout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
+              <form id="sign-out">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Good Bye</h4>
+                <h4 class="modal-title" id="sign-out-label">Good Bye</h4>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">I want to still be logged in</button>
+                  <button type="submit" class="btn btn-primary" >Good Bye</button>
+                </div>
+
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">I want to still be logged in</button>
-                <button type="button" class="btn btn-primary">Good Bye</button>
-              </div>
+            </form>
             </div>
           </div>
         </div>
@@ -166,6 +174,10 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class = "homepage">
+  <h1>Dish on the Dishes<h1>
+  <img src ="http://images.fineartamerica.com/images-medium-large-5/four-dishes-of-different-food-ron-nickel.jpg">
+</div>
 
   <div class="meals"></div>
     </body>
