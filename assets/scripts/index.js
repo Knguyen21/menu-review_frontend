@@ -13,7 +13,7 @@ const myApp = {
 let getMeals= function(){
   $.ajax({
     // ToDo: need to make a function to update ID
-    url: "http://localhost:3000/restaurants/1/meals",
+    url: "http://localhost:3000/restaurants/1/meals?meal_type=lunch",
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
