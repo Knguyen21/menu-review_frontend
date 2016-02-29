@@ -1,2 +1,22 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  display: block;
+
+}
+
+body{
+  background-image: url("http://content.backgrounds.picaboo.com/download/10/0b/10b3b01613b947128ecfdd864e894c17/tmp_vintage_paper.jpg");
+}
+
+.navbar navbar-default{
+  background-color: black;
+}
