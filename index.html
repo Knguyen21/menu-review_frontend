@@ -178,7 +178,77 @@
   <h1>Dish on the Dishes<h1>
   <img src ="http://images.fineartamerica.com/images-medium-large-5/four-dishes-of-different-food-ron-nickel.jpg">
 </div>
+<div class="menu">
+  <h1> Breakfast <h1>
+  <div class= "menu_meal" id ="breakfast"></div>
+  <h1> Lunch <h1>
+  <div class= "menu_meal" id="lunch"></div>
+  <h1> Dinner <h1>
+  <div class= "menu_meal" id="dinner"></div>
 
-  <div class="meals"></div>
+
+  <div class="modal fade" id= "reviews" tabindex="-1" role="dialog" aria-labelledby="reviewsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Reviews</h4>
+        </div>
+        <div class="modal-body" id="userReviews" >
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id= "write-review" tabindex="-1" role="dialog" aria-labelledby="reviewsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Reviews</h4>
+        </div>
+        <div class="modal-body" id="create-review" >
+
+          <form id="review-form">
+
+          <fieldset class="form-group">
+            <label for="exampleSelect2">Rating: (disgusting) 1 - 5 (Taste like heaven)</label>
+              <select multiple class="form-control" id="exampleSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="exampleTextarea">Your Review</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </fieldset>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
+        </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
     </body>
 </html>
