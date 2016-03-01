@@ -1,7 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-h1 {
+.homepage {
   text-align: center;
 }
 
@@ -21,4 +21,11 @@ body{
 .menu_meal {
   font-size: 18px;
   font-family: sans-serif;
+}
+
+.menu {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 30px;
+
 }
