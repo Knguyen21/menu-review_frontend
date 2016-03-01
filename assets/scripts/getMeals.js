@@ -6,6 +6,8 @@ const myApp = {
   baseURL: 'http://localhost:3000'
 };
 
+
+
 //
 // let getBreakfast= function(restaurant_id){
 let getBreakfast= function(){
@@ -21,7 +23,6 @@ let getBreakfast= function(){
   });
 };
 
-
 let getLunch= function(){
   $.ajax({
     // ToDo: need to make a function to update ID
@@ -34,11 +35,34 @@ let getLunch= function(){
   });
 };
 
+let getDinner= function(){
+  $.ajax({
+    // ToDo: need to make a function to update ID
+        // url: myApp.baseURL + '/restaurants/' + restaurant_id + '/meals?meal_type=breakfast',
+    url: myApp.baseURL + '/restaurants/1/meals?meal_type=dinner',
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(response){
+    console.log('Get request');
+    displayMeals(response,'#dinner');
+  });
+};
+
 let displayMeals = function(response, meal_type){
   let meals = response.meals;
   console.log("yes");
   let mealListingTemplate = require('./meal-listing.handlebars');
   $(meal_type).html(mealListingTemplate({meals}));
+    //get meal id from write review button
+  $('.write-review').on('click', function(e){
+    e.preventDefault();
+    // debugger;
+    let mealId = $(this).attr('data-id');
+    $('.write-review-button').attr('data-id', mealId);
+    $('#write-review').modal('show');
+
+  });
+
 
   console.log(response.meals);
   $(".reviews-button").on('click', getReviewsApi.getReviews);
@@ -47,5 +71,6 @@ let displayMeals = function(response, meal_type){
 module.exports = {
                 displayMeals,
                 getLunch,
-                getBreakfast
+                getBreakfast,
+                getDinner
               };
