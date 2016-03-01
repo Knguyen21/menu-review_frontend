@@ -11,12 +11,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
       <a class="navbar-brand" href="#">Home</a>
     </div>
 
@@ -27,9 +22,9 @@
             Restaurant <span class="caret"></span>
                 </button>
           <ul class="dropdown-menu">
-            <li><a id="rest1">Boloco</a></li>
+            <li><a id="1">Boloco</a></li>
             <li role="separator" class="divider"></li>
-            <li><a id="rest2">Au Bon Pain</a></li>
+            <li><a id="2">Au Bon Pain</a></li>
           </ul>
 
         </div>
@@ -186,7 +181,7 @@
   <h1> Dinner <h1>
   <div class= "menu_meal" id="dinner"></div>
 
-
+<!-- Listing of all reviews for a meal -->
   <div class="modal fade" id= "reviews" tabindex="-1" role="dialog" aria-labelledby="reviewsLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -206,8 +201,8 @@
     </div>
   </div>
 
-
-  <div class="modal fade" id= "write-review" tabindex="-1" role="dialog" aria-labelledby="reviewsLabel" aria-hidden="true">
+<!-- write review modal -->
+  <div class="modal fade" id="write-review" tabindex="-1" role="dialog" aria-labelledby="reviewsLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -222,21 +217,30 @@
 
           <fieldset class="form-group">
             <label for="exampleSelect2">Rating: (disgusting) 1 - 5 (Taste like heaven)</label>
-              <select multiple class="form-control" id="exampleSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+            <label class="radio-inline rating">
+                <input type="radio" name="review[rating]" id="inlineRadio1" value=1> 1
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio2" value=2> 2
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio3" value=3> 3
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio2" value=4> 4
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio3" value=5> 5
+              </label>
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleTextarea">Your Review</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <textarea class="form-control" name="review[comment]" id="exampleTextarea review-comment" rows="3"></textarea>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary write-review-button">Submit</button>
           </fieldset>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+
           </div>
 
         </form>
@@ -246,9 +250,81 @@
       </div>
     </div>
   </div>
+<!--end write review modal-->
 
+<!-- Delete user specific post -->
 
+  <div class="modal fade" id="delete-review" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form id="delete-review-form">
+          <h4 class="modal-title" id="sign-out-label">Do you want to delete your post?</h4>
 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">No, I want to keep it</button>
+            <button type="submit" class="btn btn-primary delete-review-button" >Delete</button>
+          </div>
+
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+<!-- end Delete post modal -->
+
+<!-- update review modal -->
+  <div class="modal fade" id="update-review" tabindex="-1" role="dialog" aria-labelledby="reviewsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Reviews</h4>
+        </div>
+        <div class="modal-body" id="update-meal-review" >
+
+          <form id="update-review-form">
+
+          <fieldset class="form-group">
+            <label for="exampleSelect2">Rating: (disgusting) 1 - 5 (Taste like heaven)</label>
+            <label class="radio-inline rating">
+                <input type="radio" name="review[rating]" id="inlineRadio1" value=1> 1
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio2" value=2> 2
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio3" value=3> 3
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio2" value=4> 4
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="review[rating]" id="inlineRadio3" value=5> 5
+              </label>
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="exampleTextarea">Your Review</label>
+            <textarea class="form-control" name="review[comment]" id="exampleTextarea review-comment" rows="3"></textarea>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary update-review-button">Submit</button>
+          </fieldset>
+          <div class="modal-footer">
+
+          </div>
+
+        </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!--end update review modal-->
 </div>
     </body>
 </html>
