@@ -25,7 +25,7 @@ $(document).ready(function(){
      getRestaurantsApi.getRestaurants();
    });
 
-   
+
 
   $(".navbar-brand").on('click',function(e){
     e.preventDefault();
