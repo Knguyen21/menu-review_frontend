@@ -8,7 +8,7 @@
 // const myApp = {
 //   baseURL: 'http://localhost:3000'
 // };
-
+let getRestaurantsApi= require('./getRestaurants');
 let getMealsApi= require('./getMeals');
 let userApi = require('./user-api');
 require('./example');
@@ -21,14 +21,11 @@ $(document).ready(function(){
   userApi.init();
   $('.menu').hide();
 
-   $("#1").on('click',function(e){
-     e.preventDefault();
-     getMealsApi.getLunch();
-     getMealsApi.getBreakfast();
-     getMealsApi.getDinner();
-       $('.homepage').hide();
-       $('.menu').show();
+   $(".restaurant-button").on('click',function(e){
+     getRestaurantsApi.getRestaurants();
    });
+
+   
 
   $(".navbar-brand").on('click',function(e){
     e.preventDefault();

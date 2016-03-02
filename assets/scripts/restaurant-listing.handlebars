@@ -1,0 +1,10 @@
+
+<script>console.log('restaurant-listing.hb start');</script>
+
+{{#each restaurants}}
+  <li><a class="restaurant-link" data-restaurant-id="{{id}}" data-address-id={{address}}> {{name}}</a></li>
+ <li role="separator" class="divider"></li>
+
+{{/each}}
+
+<script>console.log('restaurant-listing.hb end');</script>
