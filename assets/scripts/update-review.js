@@ -8,7 +8,7 @@ let updateReview = function(e) {
   // debugger;
   e.preventDefault();
   console.log("update button works");
-  let reviewID = $('.update-review-button').attr('data-review-id')
+  let reviewID = $('.update-review-button').attr('data-review-id');
   console.log('update review id: ' + reviewID);
 
   let formData = new FormData(e.target);
