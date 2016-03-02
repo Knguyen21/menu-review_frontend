@@ -24,13 +24,18 @@ When the user signs out, the user can not write, edit or delete a review.
 When the user clicks change password, the user can change her password
 
 
+
+
+Able to get all the meals from a certain restaurant by changing the Meal routes and controller.
+
+
 Backend repo: https://github.com/Knguyen21/menu-review_backend
+
 
 Wireframe:
 https://cloud.githubusercontent.com/assets/16465193/13453637/a5c74e08-e01f-11e5-8977-b304f26ece83.jpg
 https://cloud.githubusercontent.com/assets/16465193/13453663/cf97076e-e01f-11e5-8679-71d8315331a0.jpg
 
-ORM:
-https://cloud.githubusercontent.com/assets/16465193/13453699/193a865c-e020-11e5-9558-3668f41753b3.png
+
 
 For this project, I used javascript, handlebars, bootstraps, html, css, and ruby on rails to create my web app. This app allows users to view, creaate, update, and delete reviews of meal items in a restaurant's menu.
