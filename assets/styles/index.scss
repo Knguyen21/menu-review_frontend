@@ -1,2 +1,31 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.homepage {
+  text-align: center;
+}
+
+img {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  display: block;
+
+}
+
+body{
+  background-image: url("http://content.backgrounds.picaboo.com/download/10/0b/10b3b01613b947128ecfdd864e894c17/tmp_vintage_paper.jpg");
+}
+
+
+.menu_meal {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.menu {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 30px;
+
+}

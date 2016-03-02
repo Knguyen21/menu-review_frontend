@@ -1,12 +1,17 @@
 
 <script>console.log('meal-listing.hb start');</script>
-{{#each meals}}
-<br>{{meal_type}}</br>
-<br>{{name}}</br>
-<br>{{desc}}</br>
-<br>{{price}}</br>
-<br>{{restaurant_id}}</br>
-<br>{{restaurant.id}}</br>
 
+{{#each meals}}
+  <div data-meal-id={{id}}>
+    <br><h3><b>{{name}}</b></h3>
+    {{desc}}
+    <br>price: {{price}}
+    <br>
+    <button type="button" class="btn btn-primary btn-sm reviews-button" data-toggle="modal" data-target="#reviews" >
+    Reviews</button>
+    <button type="button" class="btn btn-primary btn-sm write-review" data-id="{{id}}">
+    Write Review</button>
+  </div>
 {{/each}}
+
 <script>console.log('meal-listing.hb end');</script>
