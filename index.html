@@ -17,14 +17,12 @@
 
     <!-- Select restaurant with dropdown button -->
 
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="btn-group restaurant group">
+          <button type="button" class="btn btn-default dropdown-toggle restaurant-button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Restaurant <span class="caret"></span>
                 </button>
-          <ul class="dropdown-menu">
-            <li><a id="1">Boloco</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a id="2">Au Bon Pain</a></li>
+          <ul class="dropdown-menu restaurant-listing" >
+            <!-- <li id=restaurants><a></a></li> -->
           </ul>
 
         </div>
@@ -287,7 +285,7 @@
         </div>
         <div class="modal-body" id="update-meal-review" >
 
-          <form id="update-review-form">
+          <form id="review-form">
 
           <fieldset class="form-group">
             <label for="exampleSelect2">Rating: (disgusting) 1 - 5 (Taste like heaven)</label>
@@ -311,7 +309,7 @@
             <label for="exampleTextarea">Your Review</label>
             <textarea class="form-control" name="review[comment]" id="exampleTextarea review-comment" rows="3"></textarea>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary update-review-button">Submit</button>
+            <button type="submit" class="btn btn-primary write-review-button">Submit</button>
           </fieldset>
           <div class="modal-footer">
 
