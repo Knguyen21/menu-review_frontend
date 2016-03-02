@@ -23,7 +23,7 @@ let updateReview = function(e) {
       data: formData,
     }).done(function(data) {
       console.log("update review");
-      $('#update-review').hide();
+      $('#update-review').modal('hide');
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });

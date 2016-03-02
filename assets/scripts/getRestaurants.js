@@ -42,10 +42,12 @@ let getMealsMenu = function(){
 $('.restaurant-link').on('click',function(e){
   e.preventDefault();
   let restaurantID = $(this).attr('data-restaurant-id');
+  console.log(restaurantID);
   console.log("the link button works");
   getMealsApi.getLunch(restaurantID);
   getMealsApi.getBreakfast(restaurantID);
   getMealsApi.getDinner(restaurantID);
+
     $('.homepage').hide();
     $('.menu').show();
 });

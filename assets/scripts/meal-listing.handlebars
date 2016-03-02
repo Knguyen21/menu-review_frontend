@@ -3,9 +3,8 @@
 
 {{#each meals}}
   <div data-meal-id={{id}}>
-    <br>meal id: {{id}}
-    <br>name: {{name}}
-    <br>desc: {{desc}}
+    <br><h3><b>{{name}}</b></h3>
+    {{desc}}
     <br>price: {{price}}
     <br>
     <button type="button" class="btn btn-primary btn-sm reviews-button" data-toggle="modal" data-target="#reviews" >

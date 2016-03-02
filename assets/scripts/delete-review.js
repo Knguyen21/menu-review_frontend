@@ -23,7 +23,7 @@ let deleteReview = function(e) {
       data: formData,
     }).done(function(data) {
       console.log("writing review");
-      $('#delete-review').hide();
+      $('#delete-review').modal('hide');
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });

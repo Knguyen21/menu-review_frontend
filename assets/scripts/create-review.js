@@ -24,6 +24,7 @@ let createReview = function(e) {
       processData: false,
       data: formData,
     }).done(function(data) {
+      $('#write-review').modal('hide');
       console.log("writing review");
       console.log(data);
     }).fail(function(jqxhr) {

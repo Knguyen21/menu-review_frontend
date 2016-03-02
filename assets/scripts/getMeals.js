@@ -11,7 +11,6 @@ const myApp = {
 // //
 // let getBreakfast= function(restaurant_id){
 let getBreakfast= function(restaurantID){
-    debugger;
   $.ajax({
     // ToDo: need to make a function to update ID
         // url: myApp.baseURL + '/restaurants/' + restaurant_id + '/meals?meal_type=breakfast',
@@ -24,10 +23,10 @@ let getBreakfast= function(restaurantID){
   });
 };
 
-let getLunch= function(){
+let getLunch= function(restaurantID){
   $.ajax({
     // ToDo: need to make a function to update ID
-    url: myApp.baseURL + "/restaurants/1/meals?meal_type=lunch",
+    url: myApp.baseURL + '/restaurants/'+ restaurantID +'/meals?meal_type=lunch',
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
@@ -36,12 +35,12 @@ let getLunch= function(){
   });
 };
 
-let getDinner= function(){
+let getDinner= function(restaurantID){
 
   $.ajax({
     // ToDo: need to make a function to update ID
         // url: myApp.baseURL + '/restaurants/' + restaurant_id + '/meals?meal_type=breakfast',
-    url: myApp.baseURL + '/restaurants/1/meals?meal_type=dinner',
+    url: myApp.baseURL + '/restaurants/'+ restaurantID +'/meals?meal_type=dinner',
     method: 'GET',
     dataType: 'json'
   }).done(function(response){

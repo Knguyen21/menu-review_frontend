@@ -3,12 +3,10 @@
 {{!-- </div>  --}}
 
 {{#each reviews}}
-<br>user id: {{user.id}}
-<br>email: {{user.email}}
+{{user.email}}
 <br>comment: {{comment}}
 <br>rating: {{rating}}
-<br> meal id: {{meal_id}}
-<br> review id: {{id}}
+
 
 <br>
 <button type="button" class="btn btn-primary btn-sm update-review" data-review-id="{{id}}">
