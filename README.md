@@ -24,9 +24,13 @@ When the user signs out, the user can not write, edit or delete a review.
 When the user clicks change password, the user can change her password
 
 
+
 Able to get all the meals from a certain restaurant by changing the Meal routes and controller.
 
 Backend repo: git@github.com:Knguyen21/menu-review_backend.git
+
+Backend repo: https://github.com/Knguyen21/menu-review_backend
+
 
 Wireframe:
 https://cloud.githubusercontent.com/assets/16465193/13453637/a5c74e08-e01f-11e5-8977-b304f26ece83.jpg
