@@ -2,19 +2,20 @@
 
 let getReviewsApi= require('./getReviews');
 
+
 const myApp = {
   baseURL: 'http://localhost:3000'
 };
-
-
-
 //
+// console.log('Restaurant ID: ' + restaurantID);
+// //
 // let getBreakfast= function(restaurant_id){
-let getBreakfast= function(){
+let getBreakfast= function(restaurantID){
+    debugger;
   $.ajax({
     // ToDo: need to make a function to update ID
         // url: myApp.baseURL + '/restaurants/' + restaurant_id + '/meals?meal_type=breakfast',
-    url: myApp.baseURL + '/restaurants/1/meals?meal_type=breakfast',
+    url: myApp.baseURL + '/restaurants/' + restaurantID + '/meals?meal_type=breakfast',
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
@@ -36,6 +37,7 @@ let getLunch= function(){
 };
 
 let getDinner= function(){
+
   $.ajax({
     // ToDo: need to make a function to update ID
         // url: myApp.baseURL + '/restaurants/' + restaurant_id + '/meals?meal_type=breakfast',
@@ -50,6 +52,7 @@ let getDinner= function(){
 
 let displayMeals = function(response, meal_type){
   let meals = response.meals;
+
   console.log("yes");
   let mealListingTemplate = require('./meal-listing.handlebars');
   $(meal_type).html(mealListingTemplate({meals}));

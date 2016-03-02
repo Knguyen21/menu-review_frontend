@@ -23,7 +23,7 @@ let getReviews= function(e){
 let displayReviews= function(response, review){
   let reviews = response.reviews;
      console.log("yes reviews");
-     debugger;
+    //  debugger;
     let reviewListingTemplate = require('./review-listing.handlebars');
         $(review).html(reviewListingTemplate({reviews}));
           //get review id from delete button
