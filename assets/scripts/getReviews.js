@@ -24,15 +24,14 @@ var deleteMealReview = function() {
 
 var displayReviews= function(response, review){
   var reviews = response.reviews;
-    var reviewListingTemplate = require('./review-listing.handlebars');
-        $(review).html(reviewListingTemplate({reviews}));
-        deleteMealReview();
-        updateMealReview();
+  var reviewListingTemplate = require('./review-listing.handlebars');
+  $(review).html(reviewListingTemplate({reviews}));
+  deleteMealReview();
+  updateMealReview();
 };
 
-var getReviews= function(e){
+var getReviews= function(){
   var mealId = $(this).parent().data('meal-id');
-
   $.ajax({
     url: myApp.baseURL + "/meals/" + mealId+ "/reviews",
     method: 'GET',
