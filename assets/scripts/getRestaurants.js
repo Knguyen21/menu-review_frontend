@@ -8,21 +8,8 @@ const myApp = {
 var getMealsApi= require('./getMeals');
 
 
-var getRestaurants= function(){
-  $.ajax({
-    url: myApp.baseURL + '/restaurants',
-    method: 'GET',
-    dataType: 'json'
-  }).done(function(response){
-    console.log('Get Restaurant request');
-    displayRestaurants(response);
-    getMealsMenu(response);
-  });
-};
-
 var displayRestaurants = function(response){
   var restaurants = response.restaurants;
-  console.log("restaurant listings");
   var restaurantListingTemplate = require('./restaurant-listing.handlebars');
   $('.restaurant-listing').html(restaurantListingTemplate({restaurants}));
 };
@@ -37,8 +24,6 @@ var getMealsMenu = function(){
   $('.restaurant-link').on('click',function(e){
     e.preventDefault();
     var restaurantID = $(this).attr('data-restaurant-id');
-    // console.log(restaurantID);
-    // console.log("the link button works");
     displayRestaurantMeals(restaurantID);
     $('.homepage').hide();
     $('.menu').show();
@@ -46,7 +31,21 @@ var getMealsMenu = function(){
 };
 
 
+var getRestaurants= function(){
+  $.ajax({
+    url: myApp.baseURL + '/restaurants',
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(response){
+    displayRestaurants(response);
+    getMealsMenu(response);
+  });
+};
+
+
 module.exports = {
                 displayRestaurants,
+                displayRestaurantMeals,
+                getMealsMenu,
                 getRestaurants
               };
