@@ -1,17 +1,11 @@
-{{!-- <div>
-  {{#each reviews}}{{>review}}{{/each}}
-{{!-- </div>  --}}
 
 {{#each reviews}}
 <br>{{user.email}}
 <br>comment: {{comment}}
 <br>rating: {{rating}}
-
-
 <br>
-<button type="button" class="btn btn-primary btn-sm update-review" data-review-id="{{id}}">
-  update</button>
-<button type="button" class="btn btn-primary btn-sm delete-review" data-review-id="{{id}}">
-    delete</button>
-
+<button type="button" class="btn btn-primary btn-sm update-review" data-review-id="{{id}}">update</button>
+<button type="button" class="btn btn-primary btn-sm delete-review" data-review-id="{{id}}">delete</button>
+<br>
+<br>
 {{/each}}
