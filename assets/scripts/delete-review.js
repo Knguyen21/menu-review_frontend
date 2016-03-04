@@ -4,7 +4,7 @@ var userApi= require('./user-api');
 
 var deleteReview = function(e) {
   e.preventDefault();
-  var reviewID = $('.delete-review-button').attr('data-review-id')
+  var reviewID = $('.delete-review-button').attr('data-review-id');
   var formData = new FormData(e.target);
   $.ajax({
     url: userApi.myApp.baseURL + "/reviews/" +reviewID,
@@ -17,7 +17,9 @@ var deleteReview = function(e) {
       data: formData,
     }).done(function(data) {
       $('#delete-review').modal('hide');
+      console.log(data);
     }).fail(function(jqxhr) {
+      console.log(jqxhr);
     });
   };
 

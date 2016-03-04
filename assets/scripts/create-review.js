@@ -14,14 +14,14 @@ var createReview = function(e) {
       contentType: false,
       processData: false,
       data: formData,
-    }).done(function(data) {
-      $('#write-review').modal('hide');
-      console.log("writing review");
-      console.log(data);
-    }).fail(function(jqxhr) {
-      console.error(jqxhr);
-    });
-  };
+  })
+  .done(function(data) {
+    $('#write-review').modal('hide');
+    console.log(data);
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
 
 
 module.exports = {
