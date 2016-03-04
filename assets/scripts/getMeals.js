@@ -12,7 +12,6 @@ var getBreakfast= function(restaurantID){
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
-    console.log('Get request');
     displayMeals(response,'#breakfast');
   });
 };
@@ -23,7 +22,6 @@ var getLunch= function(restaurantID){
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
-    console.log('Get request');
     displayMeals(response,'#lunch');
   });
 };
@@ -34,7 +32,6 @@ var getDinner= function(restaurantID){
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
-    console.log('Get request');
     displayMeals(response,'#dinner');
   });
 };
