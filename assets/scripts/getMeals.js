@@ -6,6 +6,23 @@ const myApp = {
   baseURL: 'http://localhost:3000'
 };
 
+var writeReview = function(){
+$('.write-review').on('click', function(e){
+  e.preventDefault();
+  let mealId = $(this).attr('data-id');
+  $('.write-review-button').attr('data-id', mealId);
+  $('#write-review').modal('show');
+});
+};
+
+var displayMeals = function(response, meal_type){
+  let meals = response.meals;
+  let mealListingTemplate = require('./meal-listing.handlebars');
+  $(meal_type).html(mealListingTemplate({meals}));
+  writeReview();
+  $(".reviews-button").on('click', getReviewsApi.getReviews);
+};
+
 var getBreakfast= function(restaurantID){
   $.ajax({
     url: myApp.baseURL + '/restaurants/' + restaurantID + '/meals?meal_type=breakfast',
@@ -36,26 +53,12 @@ var getDinner= function(restaurantID){
   });
 };
 
-var writeReview = function(){
-$('.write-review').on('click', function(e){
-  e.preventDefault();
-  let mealId = $(this).attr('data-id');
-  $('.write-review-button').attr('data-id', mealId);
-  $('#write-review').modal('show');
-});
-};
 
-var displayMeals = function(response, meal_type){
-  let meals = response.meals;
-  let mealListingTemplate = require('./meal-listing.handlebars');
-  $(meal_type).html(mealListingTemplate({meals}));
-  writeReview();
-  $(".reviews-button").on('click', getReviewsApi.getReviews);
-};
 
 module.exports = {
                 displayMeals,
                 getLunch,
                 getBreakfast,
                 getDinner
+                writeReview
               };
