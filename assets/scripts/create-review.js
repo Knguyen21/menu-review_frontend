@@ -1,19 +1,10 @@
 'use strict';
 
-let userApi= require('./user-api');
+var userApi= require('./user-api');
 
-
-//
-let createReview = function(e) {
-  // debugger;
-  console.log("button works");
-  let mealId = $('.write-review-button').attr('data-id');
-  // $('.write-review-button').attr('data-id', mealId);
-  // $('.write-review-button').attr('data-id', mealId);
-  console.log('meal id: ' + mealId);
-
-  let formData = new FormData(e.target);
-  console.log(formData);
+var createReview = function(e) {
+  var mealId = $('.write-review-button').attr('data-id');
+  var formData = new FormData(e.target);
   $.ajax({
     url: userApi.myApp.baseURL + "/meals/" + mealId+ "/reviews",
       method: 'POST',
@@ -31,8 +22,6 @@ let createReview = function(e) {
       console.error(jqxhr);
     });
   };
-
-    // console.log(response.meals);
 
 
 module.exports = {

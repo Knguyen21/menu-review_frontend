@@ -1,17 +1,11 @@
 'use strict';
 
-let userApi= require('./user-api');
+var userApi= require('./user-api');
 
-
-//
-let deleteReview = function(e) {
-  // debugger;
+var deleteReview = function(e) {
   e.preventDefault();
-  console.log("delete button works");
-  let reviewID = $('.delete-review-button').attr('data-review-id')
-  console.log('delete review id: ' + reviewID);
-
-  let formData = new FormData(e.target);
+  var reviewID = $('.delete-review-button').attr('data-review-id')
+  var formData = new FormData(e.target);
   $.ajax({
     url: userApi.myApp.baseURL + "/reviews/" +reviewID,
       method: 'DELETE',
@@ -22,10 +16,8 @@ let deleteReview = function(e) {
       processData: false,
       data: formData,
     }).done(function(data) {
-      console.log("writing review");
       $('#delete-review').modal('hide');
     }).fail(function(jqxhr) {
-      console.error(jqxhr);
     });
   };
 
