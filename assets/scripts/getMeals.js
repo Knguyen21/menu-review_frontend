@@ -7,12 +7,12 @@ const myApp = {
 };
 
 var writeReview = function(){
-$('.write-review').on('click', function(e){
-  e.preventDefault();
-  let mealId = $(this).attr('data-id');
-  $('.write-review-button').attr('data-id', mealId);
-  $('#write-review').modal('show');
-});
+  $('.write-review').on('click', function(e){
+    e.preventDefault();
+    let mealId = $(this).attr('data-id');
+    $('.write-review-button').attr('data-id', mealId);
+    $('#write-review').modal('show');
+  });
 };
 
 var displayMeals = function(response, meal_type){
@@ -59,6 +59,6 @@ module.exports = {
                 displayMeals,
                 getLunch,
                 getBreakfast,
-                getDinner
+                getDinner,
                 writeReview
               };
