@@ -6,6 +6,7 @@ const myApp = {
   baseURL: 'http://localhost:3000'
 };
 
+// allow a user who sign in the create a new review when he/she clicks on the write review button
 var writeReview = function(){
   $('.write-review').on('click', function(e){
     e.preventDefault();
@@ -15,6 +16,7 @@ var writeReview = function(){
   });
 };
 
+// display all the meals after you click on the specific restaurant name from the drop-down restuarnt listing
 var displayMeals = function(response, meal_type){
   let meals = response.meals;
   let mealListingTemplate = require('./meal-listing.handlebars');
@@ -23,42 +25,20 @@ var displayMeals = function(response, meal_type){
   $(".reviews-button").on('click', getReviewsApi.getReviews);
 };
 
-var getBreakfast= function(restaurantID){
+// get the data of all the meals from a certain meal_type from a specific restaurant
+var getMeals =  function(restaurantID, urlMealType, mealType){
   $.ajax({
-    url: myApp.baseURL + '/restaurants/' + restaurantID + '/meals?meal_type=breakfast',
+    url: myApp.baseURL + '/restaurants/' + restaurantID + '/meals?meal_type=' + urlMealType,
     method: 'GET',
     dataType: 'json'
   }).done(function(response){
-    displayMeals(response,'#breakfast');
+    displayMeals(response, mealType);
   });
 };
-
-var getLunch= function(restaurantID){
-  $.ajax({
-    url: myApp.baseURL + '/restaurants/'+ restaurantID +'/meals?meal_type=lunch',
-    method: 'GET',
-    dataType: 'json'
-  }).done(function(response){
-    displayMeals(response,'#lunch');
-  });
-};
-
-var getDinner= function(restaurantID){
-  $.ajax({
-    url: myApp.baseURL + '/restaurants/'+ restaurantID +'/meals?meal_type=dinner',
-    method: 'GET',
-    dataType: 'json'
-  }).done(function(response){
-    displayMeals(response,'#dinner');
-  });
-};
-
 
 
 module.exports = {
   displayMeals,
-  getLunch,
-  getBreakfast,
-  getDinner,
+  getMeals,
   writeReview
 };
