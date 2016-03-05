@@ -21,6 +21,24 @@ var displayRestaurantMeals = function(restaurantID) {
   getMealsApi.getMeals(restaurantID, 'dinner', '#dinner');
 };
 
+// display a specific restaurant's name and address
+var displayMenuTitle = function(response){
+    var restaurant = response.restaurant;
+    var menuTitleTemplate = require('./menu-title.handlebars');
+    $('#menu-title').html(menuTitleTemplate({restaurant}));
+};
+
+// send an ajax get request for a specific restaurant data
+var getSpecificRestaurants= function(restaurantID){
+  $.ajax({
+    url: myApp.baseURL + '/restaurants/' + restaurantID,
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(response){
+    displayMenuTitle(response);
+  });
+};
+
 //hide the homepage image and display the restuarnt menu from a certain restaurant
 var getMealsMenu = function(){
   $('.restaurant-link').on('click',function(e){
@@ -30,26 +48,6 @@ var getMealsMenu = function(){
     getSpecificRestaurants(restaurantID);
     $('.homepage').hide();
     $('.menu').show();
-  });
-};
-
-var displayMenuTitle = function(response){
-  // $('.restaurant-link').on('click',function(e){
-  //   e.preventDefault();
-    // var restaurantID = $(this).attr('data-restaurant-id');
-    var restaurant = response.restaurant;
-    var menuTitleTemplate = require('./menu-title.handlebars');
-    $('#menu-title').html(menuTitleTemplate({restaurant}));
-  // });
-};
-// send an ajax get request for a specific restaurant data
-var getSpecificRestaurants= function(restaurantID){
-  $.ajax({
-    url: myApp.baseURL + '/restaurants/' + restaurantID,
-    method: 'GET',
-    dataType: 'json'
-  }).done(function(response){
-    displayMenuTitle(response);
   });
 };
 
@@ -63,7 +61,6 @@ var getRestaurants= function(){
   }).done(function(response){
     displayRestaurants(response);
     getMealsMenu(response);
-    displayMenuTitle(response);
   });
 };
 
