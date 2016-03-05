@@ -4,6 +4,7 @@ const myApp = {
   baseURL: 'http://localhost:3000'
 };
 
+// display the update review form when you click on the update button for a specific review
 var updateMealReview= function(){
   $('.update-review').on('click', function(e){
     e.preventDefault();
@@ -13,6 +14,7 @@ var updateMealReview= function(){
   });
 };
 
+// display the delete review modal when you click on the delete button for a specific review
 var deleteMealReview = function() {
   $('.delete-review').on('click', function(e){
     e.preventDefault();
@@ -22,6 +24,7 @@ var deleteMealReview = function() {
   });
 };
 
+// display the reviews when you click on the review button for a certain restaurant's meal
 var displayReviews= function(response, review){
   var reviews = response.reviews;
   var reviewListingTemplate = require('./review-listing.handlebars');
@@ -30,6 +33,7 @@ var displayReviews= function(response, review){
   updateMealReview();
 };
 
+// send an ajax get request to get all the reviews data from the backend
 var getReviews= function(){
   var mealId = $(this).parent().data('meal-id');
   $.ajax({

@@ -2,6 +2,7 @@
 
 var userApi= require('./user-api');
 
+// send an ajax post request to create a new review when you click on the write review button 
 var createReview = function(e) {
   var mealId = $('.write-review-button').attr('data-id');
   var formData = new FormData(e.target);

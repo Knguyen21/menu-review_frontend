@@ -13,6 +13,7 @@ var createReview = require('./create-review');
 var deleteReview = require('./delete-review');
 var updateReview = require('./update-review');
 
+// display homepage when clicking home button on the top
 var homepageDisplay = function() {
   $(".navbar-brand").on('click',function(){
     $('.homepage').show();
@@ -20,6 +21,7 @@ var homepageDisplay = function() {
   });
 };
 
+// display all the reviews when you click on the review button for a specific meal
 var reviewForm = function() {
   $("#review-form").on('submit', function(e){
     e.preventDefault();
@@ -27,6 +29,7 @@ var reviewForm = function() {
   });
 };
 
+// let users delete only their own reviews
 var deleteReviewForm = function() {
   $("#delete-review-form").on('submit', function(e){
     e.preventDefault();
@@ -34,6 +37,7 @@ var deleteReviewForm = function() {
   });
 };
 
+// let users update only their own reviews
 var updateReviewForm = function() {
   $("#update-review-form").on('submit', function(e){
     e.preventDefault();

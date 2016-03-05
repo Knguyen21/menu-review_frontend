@@ -4,7 +4,7 @@ const myApp = {
   baseURL: 'http://localhost:3000'
 };
 
-
+// send an ajax post request when you click on the sign up button
 var signUp = function(e) {
   e.preventDefault();
   let formData = new FormData(e.target);
@@ -23,6 +23,7 @@ var signUp = function(e) {
   });
 };
 
+// send an ajax post request when you click on the log in button
 var signIn = function(e){
   e.preventDefault();
   var formData = new FormData(e.target);
@@ -43,6 +44,7 @@ var signIn = function(e){
   });
 };
 
+// send an ajax delete request when you click on the sign out button
 let signOut = function(e) {
   e.preventDefault();
   var formData = new FormData(e.target);
@@ -65,6 +67,7 @@ let signOut = function(e) {
   });
 };
 
+// send an ajax patch request when you click on the change button
 let changePassword = function(e) {
   e.preventDefault();
   var formData = new FormData(e.target);
