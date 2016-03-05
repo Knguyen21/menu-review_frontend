@@ -43,6 +43,6 @@ var getReviews= function(){
 
 
 module.exports = {
-                displayReviews,
-                getReviews,
-              };
+  displayReviews,
+  getReviews,
+};

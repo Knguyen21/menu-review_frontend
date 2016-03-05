@@ -93,10 +93,10 @@ let init = function() {
 };
 
 module.exports = {
-                  init,
-                  changePassword,
-                  signUp,
-                  signIn,
-                  signOut,
-                  myApp,
+  init,
+  changePassword,
+  signUp,
+  signIn,
+  signOut,
+  myApp,
 };

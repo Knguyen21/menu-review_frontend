@@ -56,9 +56,9 @@ var getDinner= function(restaurantID){
 
 
 module.exports = {
-                displayMeals,
-                getLunch,
-                getBreakfast,
-                getDinner,
-                writeReview
-              };
+  displayMeals,
+  getLunch,
+  getBreakfast,
+  getDinner,
+  writeReview
+};

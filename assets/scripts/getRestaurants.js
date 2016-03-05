@@ -44,8 +44,8 @@ var getRestaurants= function(){
 
 
 module.exports = {
-                displayRestaurants,
-                displayRestaurantMeals,
-                getMealsMenu,
-                getRestaurants
-              };
+  displayRestaurants,
+  displayRestaurantMeals,
+  getMealsMenu,
+  getRestaurants
+};
