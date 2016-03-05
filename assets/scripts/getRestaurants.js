@@ -15,9 +15,9 @@ var displayRestaurants = function(response){
 };
 
 var displayRestaurantMeals = function(restaurantID) {
-  getMealsApi.getLunch(restaurantID);
-  getMealsApi.getBreakfast(restaurantID);
-  getMealsApi.getDinner(restaurantID);
+  getMealsApi.getMeals(restaurantID, 'breakfast', '#breakfast');
+  getMealsApi.getMeals(restaurantID, 'lunch', '#lunch');
+  getMealsApi.getMeals(restaurantID, 'dinner', '#dinner');
 };
 
 var getMealsMenu = function(){
