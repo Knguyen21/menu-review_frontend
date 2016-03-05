@@ -55,4 +55,6 @@ $(document).ready(function(){
   reviewForm();
   deleteReviewForm();
   updateReviewForm();
+  $('.change-password-sign-out-button').hide();
+  $('.welcome').hide();
 });
