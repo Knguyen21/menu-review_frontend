@@ -33,6 +33,8 @@ var getMeals =  function(restaurantID, urlMealType, mealType){
     dataType: 'json'
   }).done(function(response){
     displayMeals(response, mealType);
+  }).fail(function(jqxhr) {
+  console.log(jqxhr);
   });
 };
 

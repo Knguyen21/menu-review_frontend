@@ -32,6 +32,16 @@ var getMealsMenu = function(){
   });
 };
 
+var displayMenuTitle = function(response){
+  $('.restaurant-link').on('click',function(e){
+    e.preventDefault();
+    // var restaurantID = $(this).attr('data-restaurant-id');
+    var restaurants = response.restaurants;
+    var menuTitleTemplate = require('./menu-title.handlebars');
+    $('#menu-title').html(menuTitleTemplate({restaurants}));
+  });
+};
+
 // send an ajax get request for the restaurant data
 var getRestaurants= function(){
   $.ajax({
@@ -41,6 +51,7 @@ var getRestaurants= function(){
   }).done(function(response){
     displayRestaurants(response);
     getMealsMenu(response);
+    displayMenuTitle(response);
   });
 };
 
