@@ -4,6 +4,52 @@ const myApp = {
   baseURL: 'http://localhost:3000'
 };
 
+let signInEvent = function() {
+  $('#login').modal('hide');
+  $('.sign-up-in-button').hide();
+  $('.change-password-sign-out-button').show();
+  $('.welcome').show();
+  $('#login-message').hide();
+};
+
+let signOutEvent = function() {
+  $('#signout').modal('hide');
+  $('.sign-up-in-button').show();
+  $('.change-password-sign-out-button').hide();
+  $('.welcome').hide();
+  $('#login-message').show();
+};
+
+
+// display the email of the user who signed in
+var displayUser = function(response){
+  var user = response.user;
+  console.log("testing");
+  var userTemplate = require('./user-email.handlebars');
+  $('#user-email').html(userTemplate({user}));
+  console.log(userTemplate);
+};
+
+
+// send an ajax get request for a specific user's data
+let getUser = function() {
+  $.ajax({
+    url: myApp.baseURL +'/users/' + myApp.user.id,
+    method: 'GET',
+    dataType: 'json',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+  })
+  .done(function(data) {
+    console.log(data);
+    displayUser(data);
+  })
+  .fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 
 // send an ajax post request when you click on the sign up button
 var signUp = function(e) {
@@ -39,11 +85,7 @@ var signIn = function(e){
   .done(function(data) {
     myApp.user = data.user;
     console.log(data);
-    $('#login').modal('hide');
-    $('.sign-up-in-button').hide();
-    $('.change-password-sign-out-button').show();
-    $('.welcome').show();
-    $('#login-message').hide();
+    signInEvent();
     getUser();
   })
   .fail(function(jqxhr) {
@@ -68,11 +110,7 @@ let signOut = function(e) {
   })
   .done(function(data) {
     console.log(data);
-    $('#signout').modal('hide');
-    $('.sign-up-in-button').show();
-    $('.change-password-sign-out-button').hide();
-    $('.welcome').hide();
-    $('#login-message').show();
+    signOutEvent();
   })
   .fail(function(jqxhr) {
     console.error(jqxhr);
@@ -99,36 +137,6 @@ let changePassword = function(e) {
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
-};
-
-
-// send an ajax get request for a specific user's data
-let getUser = function() {
-  $.ajax({
-    url: myApp.baseURL +'/users/' + myApp.user.id,
-    method: 'GET',
-    dataType: 'json',
-    headers: {
-      Authorization: 'Token token=' + myApp.user.token,
-    },
-  })
-  .done(function(data) {
-    console.log(data);
-    displayUser(data);
-  })
-  .fail(function(jqxhr) {
-    console.error(jqxhr);
-  });
-};
-
-
-// display the email of the user who signed in
-var displayUser = function(response){
-  var user = response.user;
-  console.log("testing");
-  var userTemplate = require('./user-email.handlebars');
-  $('#user-email').html(userTemplate({user}));
-  console.log(userTemplate);
 };
 
 
