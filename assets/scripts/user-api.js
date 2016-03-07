@@ -1,7 +1,7 @@
 'use strict';
 
 const myApp = {
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 };
 
 let signInEvent = function() {

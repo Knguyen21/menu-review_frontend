@@ -2,7 +2,7 @@
 
 
 const myApp = {
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 };
 
 var getMealsApi= require('./getMeals');

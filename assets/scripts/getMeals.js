@@ -3,7 +3,7 @@
 var getReviewsApi= require('./getReviews');
 
 const myApp = {
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 };
 
 // allow a user who sign in to create a new review when he/she clicks on the write review button for a specific meal

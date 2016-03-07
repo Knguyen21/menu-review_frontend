@@ -1,7 +1,7 @@
 'use strict';
 
 const myApp = {
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 };
 
 // display the update review form when you click on the update button for a specific review
