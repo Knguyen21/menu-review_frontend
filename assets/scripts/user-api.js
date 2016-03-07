@@ -24,10 +24,8 @@ let signOutEvent = function() {
 // display the email of the user who signed in
 var displayUser = function(response){
   var user = response.user;
-  console.log("testing");
   var userTemplate = require('./user-email.handlebars');
   $('#user-email').html(userTemplate({user}));
-  console.log(userTemplate);
 };
 
 
