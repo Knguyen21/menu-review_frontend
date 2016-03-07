@@ -92,7 +92,7 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var myApp = {
-	  baseURL: 'http://localhost:3000'
+	  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 	};
 
 	var getMealsApi = __webpack_require__(4);
@@ -174,7 +174,7 @@ webpackJsonp([0],[
 	var getReviewsApi = __webpack_require__(5);
 
 	var myApp = {
-	  baseURL: 'http://localhost:3000'
+	  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 	};
 
 	// allow a user who sign in to create a new review when he/she clicks on the write review button for a specific meal
@@ -223,7 +223,7 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var myApp = {
-	  baseURL: 'http://localhost:3000'
+	  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 	};
 
 	// display the update review form when you click on the update button for a specific review
@@ -1544,7 +1544,7 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var myApp = {
-	  baseURL: 'http://localhost:3000'
+	  baseURL: 'https://dish-on-the-dishes.herokuapp.com/'
 	};
 
 	var signInEvent = function signInEvent() {
