@@ -42,6 +42,8 @@ var getReviews= function(){
     dataType: 'json'
   }).done(function(response){
     displayReviews(response,'#userReviews');
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
   });
 };
 

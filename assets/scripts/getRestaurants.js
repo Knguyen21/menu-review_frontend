@@ -36,6 +36,8 @@ var getSpecificRestaurants= function(restaurantID){
     dataType: 'json'
   }).done(function(response){
     displayMenuTitle(response);
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
   });
 };
 
@@ -61,6 +63,8 @@ var getRestaurants= function(){
   }).done(function(response){
     displayRestaurants(response);
     getMealsMenu(response);
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
   });
 };
 
